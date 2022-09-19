@@ -1,14 +1,29 @@
 import PropTypes from 'prop-types';
+import { FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa';
+import { iconSize } from 'constants';
 import css from './Profile.module.css';
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar = FaUserAlt,
+  stats,
+}) => {
   return (
     <div className={css.profile}>
       <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
+        <img
+          src={avatar ?? FaUserAlt}
+          alt="User avatar"
+          className={css.avatar}
+        />
         <p className={css.name}>{username}</p>
         <p className={css.tag}>{'@' + tag}</p>
-        <p className={css.location}>{location}</p>
+        <p className={css.location}>
+          <FaMapMarkerAlt className={css.icon} size={iconSize.s} />
+          {location}
+        </p>
       </div>
 
       <ul className={css.stats}>
@@ -34,5 +49,9 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string,
-  stats: PropTypes.objectOf(PropTypes.number),
+  stats: PropTypes.exact({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };

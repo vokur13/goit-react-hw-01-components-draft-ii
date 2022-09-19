@@ -12,6 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+address {
+  font-style: normal;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -23,18 +32,25 @@ h3,
 h4,
 h5,
 h6,
-p {
-  margin: 0;
-}
-
+p,
 ul,
-ol {
+ol,
+li {
   margin: 0;
   padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin: 0;
 }

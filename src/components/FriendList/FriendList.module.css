@@ -1,4 +1,5 @@
 .section {
+  width: 100%;
   background-color: aquamarine;
 }
 .title {
@@ -8,6 +9,16 @@
 .friendList {
 }
 .status {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.online {
+  background-color: green;
+}
+.offline {
+  background-color: red;
 }
 .avatar {
 }

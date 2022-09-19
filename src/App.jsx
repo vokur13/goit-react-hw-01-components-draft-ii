@@ -1,5 +1,4 @@
 import { PageTitle } from 'components/PageTitle/PageTitle';
-import { UserBox } from 'components/UserBox/UserBox';
 import { Profile } from 'components/Profile/Profile';
 import { Statistics } from 'components/Statistics/Statistics';
 import { FriendList } from 'components/FriendList/FriendList';
@@ -13,7 +12,6 @@ export const App = () => {
   return (
     <>
       <PageTitle text="App User Card" />
-      <UserBox />
       <Profile
         username={user.username}
         tag={user.tag}

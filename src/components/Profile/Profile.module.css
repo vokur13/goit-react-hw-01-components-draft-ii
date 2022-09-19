@@ -1,15 +1,25 @@
 .profile {
   background-color: skyblue;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .description {
 }
 .avatar {
+  margin-left: auto;
+  margin-right: auto;
+  height: 75px;
 }
 .name {
 }
 .tag {
 }
 .location {
+}
+.icon {
+  margin-right: 5px;
 }
 .stats {
 }
