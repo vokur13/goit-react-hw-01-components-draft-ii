@@ -2,7 +2,20 @@ import PropTypes from 'prop-types';
 import { FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa';
 import { iconSize } from 'constants';
 import css from './Profile.module.css';
-import commonStyles from '../../css/Common.module.css';
+// import commonStyles from '../../css/Common.module.css';
+import { Section, Container } from '../Styled/Common.styled';
+import {
+  ProfileWrapper,
+  Description,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+  StatsList,
+  StatsItem,
+  StatsLabel,
+  StatsQuantity,
+} from './Profile.styled';
 
 export const Profile = ({
   username,
@@ -12,40 +25,35 @@ export const Profile = ({
   stats,
 }) => {
   return (
-    <section className={commonStyles.section}>
-      <div className={css.profile}>
-        <div className={commonStyles.container}>
-          <div className={css.description}>
-            <img
-              src={avatar ?? FaUserAlt}
-              alt="User avatar"
-              className={css.avatar}
-            />
-            <p className={css.name}>{username}</p>
-            <p className={css.tag}>{'@' + tag}</p>
-            <p className={css.location}>
+    <Section>
+      <ProfileWrapper>
+        <Container>
+          <Description>
+            <Avatar src={avatar ?? FaUserAlt} alt="User avatar" />
+            <Name>{username}</Name>
+            <Tag>{'@' + tag}</Tag>
+            <Location>
               <FaMapMarkerAlt className={css.icon} size={iconSize.s} />
               {location}
-            </p>
-          </div>
-
-          <ul className={css.stats}>
-            <li>
-              <span className={css.label}>Followers</span>
-              <span className={css.quantity}>{stats.followers}</span>
-            </li>
-            <li>
-              <span className={css.label}>Views</span>
-              <span className={css.quantity}>{stats.views}</span>
-            </li>
-            <li>
-              <span className={css.label}>Likes</span>
-              <span className={css.quantity}>{stats.likes}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+            </Location>
+          </Description>
+          <StatsList>
+            <StatsItem>
+              <StatsLabel>Followers</StatsLabel>
+              <StatsQuantity>{stats.followers}</StatsQuantity>
+            </StatsItem>
+            <StatsItem>
+              <StatsLabel>Views</StatsLabel>
+              <StatsQuantity>{stats.views}</StatsQuantity>
+            </StatsItem>
+            <StatsItem>
+              <StatsLabel>Likes</StatsLabel>
+              <StatsQuantity>{stats.likes}</StatsQuantity>
+            </StatsItem>
+          </StatsList>
+        </Container>
+      </ProfileWrapper>
+    </Section>
   );
 };
 
