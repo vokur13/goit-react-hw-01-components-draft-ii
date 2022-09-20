@@ -1,10 +1,6 @@
 .statistics {
   background-color: pink;
 }
-.title {
-  text-align: center;
-  margin-bottom: 30px;
-}
 .statList {
   display: flex;
 }

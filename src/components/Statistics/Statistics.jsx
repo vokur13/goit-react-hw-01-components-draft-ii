@@ -10,7 +10,7 @@ import { getColor } from 'utils';
 export const Statistics = ({ title, stats }) => {
   return (
     <section className={commonStyles.section}>
-      {title && <h2 className={css.title}>{title}</h2>}
+      {title && <h2 className={commonStyles.title}>{title}</h2>}
       <div className={commonStyles.container}>
         <ul className={css.statList}>
           {stats.map(item => (
