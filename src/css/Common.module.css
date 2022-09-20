@@ -1,3 +1,14 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #010101;
+  --color-green: #4caf50;
+  --color-red: #f44336;
+  --color-blue: #2196f3;
+  --color-yellow: yellow;
+  --color-primary-text: #212121;
+  --color-secondary-text: #757575;
+}
+
 .section {
   background-color: rgb(192, 234, 251);
   width: 100%;

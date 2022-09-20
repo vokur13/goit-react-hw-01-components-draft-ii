@@ -18,7 +18,26 @@
   border-radius: 2px 2px 2px 2px;
 }
 
+.item {
+}
+
 .itemType {
   text-align: start;
   padding-left: 20px;
+}
+
+.invoice {
+  background-color: var(--color-yellow);
+}
+
+.payment {
+  background-color: var(--color-blue);
+}
+
+.withdrawal {
+  background-color: var(--color-red);
+}
+
+.deposit {
+  background-color: var(--color-green);
 }
