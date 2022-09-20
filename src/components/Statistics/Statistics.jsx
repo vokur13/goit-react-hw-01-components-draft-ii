@@ -1,19 +1,30 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
+import commonStyles from '../../css/Common.module.css';
+import { getColor } from 'utils';
+
+// const backgroundColor = {
+//   backgroundColor: getColor(),
+// };
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className={css.statistics}>
+    <section className={commonStyles.section}>
       {title && <h2 className={css.title}>{title}</h2>}
-
-      <ul className={css.statList}>
-        {stats.map(item => (
-          <li key={item.id} className={css.item}>
-            <span className={css.label}>{item.label}</span>
-            <span className={css.percentage}>{item.percentage}</span>
-          </li>
-        ))}
-      </ul>
+      <div className={commonStyles.container}>
+        <ul className={css.statList}>
+          {stats.map(item => (
+            <li
+              key={item.id}
+              style={{ backgroundColor: getColor() }}
+              className={css.item}
+            >
+              <span className={css.label}>{item.label}</span>
+              <span className={css.percentage}>{item.percentage + '%'}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

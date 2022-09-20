@@ -12,7 +12,7 @@ export const Profile = ({
   stats,
 }) => {
   return (
-    <div className={commonStyles.section}>
+    <section className={commonStyles.section}>
       <div className={css.profile}>
         <div className={commonStyles.container}>
           <div className={css.description}>
@@ -45,7 +45,7 @@ export const Profile = ({
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

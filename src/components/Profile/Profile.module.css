@@ -49,6 +49,9 @@
   border-right: 1px solid #eeeeee;
   background-color: #fff;
 }
+.stats li:not(:last-child) {
+  border-right: 1px solid #eeeeee;
+}
 .label {
   display: block;
   font-weight: 400;
