@@ -7,10 +7,10 @@ export const Table = styled.table`
 
 export const TableHeaderWrapper = styled.thead`
   width: 100%;
-  background-color: var(--color-brown);
-  color: var(--color-white);
+  background-color: ${props => props.theme.colors.brown};
+  color: ${props => props.theme.colors.white};
   text-transform: uppercase;
-  padding: 10px;
+  padding: ${props => props.theme.spacing(2)};
 `;
 
 export const TableHeaderRow = styled.tr``;
@@ -19,18 +19,18 @@ export const TableHead = styled.th``;
 
 export const TableBody = styled.tbody``;
 
-const setBgColor = props => {
-  switch (props.type) {
+const setBgColor = ({ type, theme }) => {
+  switch (type) {
     case 'invoice':
-      return 'var(--color-yellow)';
+      return theme.colors.yellow;
     case 'payment':
-      return 'var(--color-blue)';
+      return theme.colors.blue;
     case 'withdrawal':
-      return 'var(--color-red)';
+      return theme.colors.red;
     case 'deposit':
-      return 'var(--color-green)';
+      return theme.colors.green;
     default:
-      return '#000';
+      return theme.colors.white;
   }
 };
 
@@ -43,5 +43,5 @@ export const TableBodyRow = styled.tr`
 
 export const TableData = styled.td`
   text-align: start;
-  padding-left: 20px;
+  padding-left: ${props => props.theme.spacing(6)};
 `;

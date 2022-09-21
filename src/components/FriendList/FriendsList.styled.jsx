@@ -4,22 +4,22 @@ export const FriendsMap = styled.ul``;
 
 export const FriendsItem = styled.li`
   display: flex;
-  background-color: #fff;
+  background-color: ${props => `${props.theme.colors.white}`};
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px 4px 4px 4px;
-  padding: 10px;
+  padding: ${props => `${props.theme.spacing(2)}`};
   align-items: center;
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: ${props => `${props.theme.spacing(2)}`};
   }
 `;
 
-const setBgColor = props => {
-  if (props.isOnline) {
-    return 'var(--color-green)';
+const setBgColor = ({ isOnline, theme }) => {
+  if (isOnline) {
+    return theme.colors.green;
   }
-  return 'var(--color-red)';
+  return theme.colors.red;
 };
 
 export const Status = styled.span`
@@ -27,15 +27,15 @@ export const Status = styled.span`
   width: 12px;
   height: 10px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: ${props => props.theme.spacing(1)};
   background-color: ${setBgColor};
 `;
 
 export const Avatar = styled.img`
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 6px;
-  background-color: aquamarine;
+  padding: ${props => props.theme.spacing(2)};
+  margin-right: ${props => props.theme.spacing(2)};
+  border-radius: ${props => props.theme.spacing(1)};
+  background-color: ${props => props.theme.colors.avatarBg};
 `;
 
 export const Name = styled.p`

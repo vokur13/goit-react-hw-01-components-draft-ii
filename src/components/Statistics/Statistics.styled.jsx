@@ -7,9 +7,9 @@ export const StatList = styled.ul`
 
 export const StatItem = styled.li`
   flex-grow: 1;
-  padding: 10px;
+  padding: ${props => `${props.theme.spacing(2)}`};
   &:not(:last-child) {
-    border-right: 1px solid #eeeeee;
+    border-right: ${props => `1px solid ${props.theme.colors.border}`};
   }
   background-color: ${getRandomColor};
 `;
@@ -17,12 +17,12 @@ export const StatItem = styled.li`
 export const StatLabel = styled.span`
   display: block;
   text-align: center;
-  color: #fff;
+  color: ${props => `${props.theme.colors.white}`};
 `;
 
 export const StatRatio = styled.span`
   display: block;
   text-align: center;
   font-size: 24px;
-  color: #fff;
+  color: ${props => `${props.theme.colors.white}`};
 `;

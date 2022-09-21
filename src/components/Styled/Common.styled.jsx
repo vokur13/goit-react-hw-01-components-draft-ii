@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.section`
-  background-color: rgb(192, 234, 251);
+  background-color: ${props => props.theme.colors.sectionBg};
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #fff;
+  border-bottom: ${props => `1px solid ${props.theme.colors.white}`};
 `;
 
 export const Container = styled.div`
@@ -23,5 +23,5 @@ export const Container = styled.div`
 
 export const SectionTitle = styled.h2`
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: ${props => `${props.theme.spacing(6)}`};
 `;

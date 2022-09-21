@@ -5,16 +5,16 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const Description = styled.div`
-  padding: 10px;
+  padding: ${props => `${props.theme.spacing(2)}`};
 `;
 
 export const Avatar = styled.img`
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
+  margin-bottom: ${props => `${props.theme.spacing(2)}`};
   height: 75px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: ${props => `${props.theme.colors.white}`};
 `;
 
 export const Name = styled.p`
@@ -23,7 +23,7 @@ export const Name = styled.p`
   line-height: calc(19 / 18);
   text-align: center;
   letter-spacing: 0.03em;
-  margin-bottom: 10px;
+  margin-bottom: ${props => `${props.theme.spacing(2)}`};
 `;
 
 export const Tag = styled.p`
@@ -32,8 +32,8 @@ export const Tag = styled.p`
   line-height: calc(19 / 16);
   text-align: center;
   letter-spacing: 0.03em;
-  color: #757575;
-  margin-bottom: 10px;
+  color: ${props => `${props.theme.colors.secondaryText}`};
+  margin-bottom: ${props => `${props.theme.spacing(2)}`};
 `;
 
 export const Location = styled.p`
@@ -42,9 +42,9 @@ export const Location = styled.p`
   line-height: calc(19 / 16);
   text-align: center;
   letter-spacing: 0.03em;
-  color: #757575;
+  color: ${props => `${props.theme.colors.secondaryText}`};
   svg {
-    margin-right: 5px;
+    margin-right: ${props => `${props.theme.spacing(4)}`};
   }
 `;
 
@@ -54,10 +54,10 @@ export const StatsList = styled.ul`
 
 export const StatsItem = styled.li`
   flex-grow: 1;
-  padding: 10px;
-  background-color: #fff;
+  padding: ${props => `${props.theme.spacing(2)}`};
+  background-color: ${props => `${props.theme.colors.white}`};
   &:not(:last-child) {
-    border-right: 1px solid #eeeeee;
+    border-right: ${props => `1px solid ${props.theme.colors.border}`};
   }
 `;
 
@@ -68,7 +68,7 @@ export const StatsLabel = styled.span`
   line-height: calc(19 / 16);
   text-align: center;
   letter-spacing: 0.03em;
-  color: #757575;
+  color: ${props => `${props.theme.colors.secondaryText}`};
 `;
 
 export const StatsQuantity = styled.span`
