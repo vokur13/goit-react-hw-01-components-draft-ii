@@ -1,39 +1,41 @@
 import PropTypes from 'prop-types';
-import css from './TransactionHistory.module.css';
-import commonStyles from '../../css/Common.module.css';
+import { Section, SectionTitle, Container } from '../Styled/Common.styled';
+import {
+  Table,
+  TableHeaderWrapper,
+  TableHeaderRow,
+  TableHead,
+  TableBody,
+  TableBodyRow,
+  TableData,
+} from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ title, items }) => {
   return (
-    <section className={commonStyles.section}>
-      {title && <h2 className={commonStyles.title}>{title}</h2>}
-      <div className={commonStyles.container}>
-        <table className={css.transactionHistory}>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Amount</th>
-              <th>Currency</th>
-            </tr>
-          </thead>
+    <Section>
+      {title && <SectionTitle>{title}</SectionTitle>}
+      <Container>
+        <Table>
+          <TableHeaderWrapper>
+            <TableHeaderRow>
+              <TableHead>Type</TableHead>
+              <TableHead>Amount</TableHead>
+              <TableHead>Currency</TableHead>
+            </TableHeaderRow>
+          </TableHeaderWrapper>
 
-          <tbody>
+          <TableBody>
             {items.map(item => (
-              <tr key={item.id}>
-                <td className={`${css.itemType} ${css[item.type]}`}>
-                  {item.type}
-                </td>
-                <td className={`${css.itemType} ${css[item.type]}`}>
-                  {item.amount}
-                </td>
-                <td className={`${css.itemType} ${css[item.type]}`}>
-                  {item.currency}
-                </td>
-              </tr>
+              <TableBodyRow type={item.type} key={item.id}>
+                <TableData>{item.type}</TableData>
+                <TableData>{item.amount}</TableData>
+                <TableData>{item.currency}</TableData>
+              </TableBodyRow>
             ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
+          </TableBody>
+        </Table>
+      </Container>
+    </Section>
   );
 };
 

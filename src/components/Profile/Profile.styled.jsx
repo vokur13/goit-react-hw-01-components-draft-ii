@@ -43,11 +43,10 @@ export const Location = styled.p`
   text-align: center;
   letter-spacing: 0.03em;
   color: #757575;
+  svg {
+    margin-right: 5px;
+  }
 `;
-
-// export const ProfileIcon = styled.p`
-//   margin-right: 5px;
-// `;
 
 export const StatsList = styled.ul`
   display: flex;
@@ -56,8 +55,10 @@ export const StatsList = styled.ul`
 export const StatsItem = styled.li`
   flex-grow: 1;
   padding: 10px;
-  border-right: 1px solid #eeeeee;
   background-color: #fff;
+  &:not(:last-child) {
+    border-right: 1px solid #eeeeee;
+  }
 `;
 
 export const StatsLabel = styled.span`

@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import { FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa';
 import { iconSize } from 'constants';
-import css from './Profile.module.css';
-// import commonStyles from '../../css/Common.module.css';
 import { Section, Container } from '../Styled/Common.styled';
 import {
   ProfileWrapper,
@@ -33,7 +31,7 @@ export const Profile = ({
             <Name>{username}</Name>
             <Tag>{'@' + tag}</Tag>
             <Location>
-              <FaMapMarkerAlt className={css.icon} size={iconSize.s} />
+              <FaMapMarkerAlt size={iconSize.s} />
               {location}
             </Location>
           </Description>

@@ -1,34 +1,29 @@
 import PropTypes from 'prop-types';
-import css from './FriendList.module.css';
-import commonStyles from '../../css/Common.module.css';
+import { Section, SectionTitle, Container } from '../Styled/Common.styled';
+import {
+  FriendsMap,
+  FriendsItem,
+  Status,
+  Avatar,
+  Name,
+} from './FriendsList.styled';
 
 export const FriendList = ({ title, friends }) => {
   return (
-    <section className={commonStyles.section}>
-      {title && <h2 className={commonStyles.title}>{title}</h2>}
-      <div className={commonStyles.container}>
-        <ul className={css.friendList}>
+    <Section>
+      {title && <SectionTitle>{title}</SectionTitle>}
+      <Container>
+        <FriendsMap>
           {friends.map(friend => (
-            <li key={friend.id} className={css.item}>
-              <span
-                className={
-                  friend.isOnline
-                    ? `${css.status} ${css.online}`
-                    : `${css.status} ${css.offline}`
-                }
-              ></span>
-              <img
-                className={css.avatar}
-                src={friend.avatar}
-                alt="User avatar"
-                width="48"
-              />
-              <p className={css.name}>{friend.name}</p>
-            </li>
+            <FriendsItem key={friend.id}>
+              <Status isOnline={friend.isOnline}></Status>
+              <Avatar src={friend.avatar} alt="User avatar" width="48" />
+              <Name>{friend.name}</Name>
+            </FriendsItem>
           ))}
-        </ul>
-      </div>
-    </section>
+        </FriendsMap>
+      </Container>
+    </Section>
   );
 };
 
